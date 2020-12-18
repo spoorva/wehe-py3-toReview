@@ -338,11 +338,7 @@ class TCPServer(object):
                    (by calling return)
         '''
         clientIP = address[0]
-        print()
-        print()
-        print(clientIP)
-        print()
-        print()
+        
 		
         clientPort = str(address[1]).zfill(5)
         '''
@@ -938,7 +934,7 @@ class SideChannel(object):
             self.all_side_conns[g] = (id, replayName)
             self.id2g[realID] = g
 			
-            print("ON LINE 934")
+            
 			
             g.link(self.side_channel_callback)
             self.greenlets_q.put((g, id, replayName, 'sc', None))
@@ -968,7 +964,7 @@ class SideChannel(object):
 		
 		#this one works, uncomment line 929
         #receive traceroute result
-        print("RUNNING TRACEROUTE! on line 971")
+        print("Running Traceroute!")
         tracerouteRes = dClient.trc_rt.start()
 
         # 3a- Receive iperf result
@@ -1113,7 +1109,6 @@ class SideChannel(object):
         # 9- Set secondarySuccess to True, add this replay to recent list, and close connection
         dClient.secondarySuccess = True
 
-        print("ON LINE 1109")
         print()
         if replayName not in self.replays_since_last_cleaning:
             self.replays_since_last_cleaning.append(replayName)
